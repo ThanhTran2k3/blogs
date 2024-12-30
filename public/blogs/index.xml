@@ -24,9 +24,9 @@
     </item>
     <item>
       <title>Stream API và Lambda Expressions trong Java 8</title>
-      <link>http://localhost:1313/blogs/java_9/</link>
+      <link>http://localhost:1313/blogs/java_8/</link>
       <pubDate>Thu, 23 Feb 2023 12:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/blogs/java_9/</guid>
+      <guid>http://localhost:1313/blogs/java_8/</guid>
       <description>Java đã có một chặng đường dài kể từ khi ra đời, và phiên bản Java 8 đánh dấu một bước ngoặt lớn với việc giới thiệu Stream API và Lambda Expressions. Những tính năng này đã thay đổi cách chúng ta viết mã Java, đặc biệt là trong việc xử lý dữ liệu và tối ưu hóa các tác vụ phức tạp. Trong bài viết này, chúng ta sẽ cùng tìm hiểu chi tiết về Stream API và Lambda Expressions, những tính năng đột phá trong Java 8, và cách chúng giúp đơn giản hóa mã nguồn, tăng tính hiệu quả và dễ bảo trì.</description>
     </item>
     <item>
