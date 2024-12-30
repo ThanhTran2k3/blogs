@@ -1,0 +1,401 @@
+baseURL: "http://example.org/"
+languageCode: "vi"
+title: "Profile"
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+pagination.pagerSize: 9
+enableRobotsTXT: true
+# disqusShortname: your-disqus-shortname
+# googleAnalytics: G-MEASUREMENT_ID
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: blog
+      name: Bài viết
+      title: Bài viết
+      url: /blogs
+      weight: 1
+    #Dropdown menu
+    # - identifier: dropdown
+    #   title: Example dropdown menu
+    #   name: Dropdown
+    #   weight: 3
+    # - identifier: dropdown1
+    #   title: example dropdown 1
+    #   name: example 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   title: example dropdown 2
+    #   name: example 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
+
+params:
+  title: "Profile"
+  description: Text about my cool site
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/fav.png"
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+
+  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+  mathjax: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  # color preference
+  # When using hex codes for colors, quotations must be used along with the # sign
+  # color:
+  #   textColor: "#343a40"
+  #   secondaryTextColor: "#6c757d"
+  #   textLinkColor: "#007bff"
+  #   backgroundColor: "#eaedf0"
+  #   secondaryBackgroundColor: "#64ffda1a"
+  #   primaryColor: "#007bff"
+  #   secondaryColor: "#f8f9fa"
+
+  #   darkmode:
+  #     textColor: "#e4e6eb"
+  #     secondaryTextColor: "#b0b3b8"
+  #     textLinkColor: "#ffffff"
+  #     backgroundColor: "#18191a"
+  #     secondaryBackgroundColor: "#212529"
+  #     primaryColor: "#ffffff"
+  #     secondaryColor: "#212529"
+
+  # If you want to customize the menu, you can change it here
+  navbar:
+    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
+    # showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "Profile" # Brand name for the brand | default is the title variable
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    stickyNavBar:
+      enable : true
+      showOnScrollUp : true
+    enableSeparator: false
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  # Hero
+  hero:
+    enable: true
+    intro: "Xin chào, Tôi tên là"
+    title: "Trần Tấn Thanh."
+    subtitle: "Người xây dựng các sản phẩm web"
+    content: "Là một lập trình viên đam mê lập trình web. Tôi thường sử dụng các công nghệ hiện đại để xây dựng các trang web không chỉ đẹp mắt, mà còn mang lại trải nghiệm tuyệt vời và mượt mà."
+    image: /images/avatar2.jpg
+    bottomImage:
+      enable: true
+    # roundImage: true # Make hero image circular | default false
+    button:
+      enable: true
+      name: "Bản tóm tắt"
+      url: "#"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/ThanhTran2k3
+        - icon: fab fa-facebook
+          url: https://www.facebook.com/tranthanh31321/
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/thanh-tr%E1%BA%A7n-7a0bb4343/
+
+  # About
+  about:
+    enable: true
+    title: "Giới thiệu"
+    image: "/images/avatar3.jpg"
+    content: |-
+      Chào bạn! Tôi là Trần Tấn Thanh là một sinh viên năm 4 chuyên ngành Công nghệ phần mềm tại Trường Đại học Công Nghệ TP. Hồ Chí Minh (HUTECH). Với niềm đam mê sâu sắc trong lĩnh vực phát triển phần mềm, tôi luôn nỗ lực học hỏi và phát triển kỹ năng qua các dự án học tập cũng như các hoạt động thực hành.
+
+      Với tinh thần cầu tiến và luôn mong muốn khám phá những thử thách mới, tôi hiện đang tìm kiếm cơ hội để phát triển bản thân.
+    skills:
+      enable: true
+      title: "Trong suốt thời gian học tập tại trường, tôi đã có cơ hội làm việc với các công nghệ:"
+      items:
+        - "HTML"
+        - "CSS"
+        - "JavaScript"
+        - "Python"
+        - "Java"
+        - "C#"
+
+  # Experience
+  # experience:
+  #   enable: true
+  #   # title: "Custom Name"
+  #   items:
+  #     - job: "Senior Software Developer"
+  #       company: "Facebook"
+  #       companyUrl: "https://example.com"
+  #       date: "Jan 2022 - present"
+  #       featuredLink:
+  #         enable: true
+  #         name: "View the project"
+  #         url: "https://example.com"
+  #       content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
+
+  #     - job: "Software Developer"
+  #       company: "Amazon"
+  #       companyUrl: "https://example.com"
+  #       date: "Sep 2020 - Dec 2021"
+  #       featuredLink:
+  #         enable: true
+  #         url: "https://example.com"
+  #       info:
+  #         enable: true
+  #         content: I worked as a software developer for more than one year in Amazon.
+  #       content: |
+  #         I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+
+  #         - Lead backend developer for a product.
+  #         - Created a frontend design for a product.
+
+  #     - job: "Junior Software Developer"
+  #       company: "Apple"
+  #       companyUrl: "https://example.com"
+  #       date: "Jan 2020 - Aug 2020"
+  #       info:
+  #         enable: false
+  #       featuredLink:
+  #         enable: true
+  #         url: "https://example.com"
+  #       content: |
+  #         I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+
+  #         - Lead backend developer for a product.
+  #         - Created a frontend design for a product.
+
+  #     - job: "UI/UX Designer"
+  #       company: "Netflix"
+  #       companyUrl: "https://example.com"
+  #       date: "June 2017 - Nov 2019"
+  #       featuredLink:
+  #         enable: true
+  #         url: "https://example.com"
+  #       content: |
+  #         I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+
+  #         - Lead backend developer for a product.
+  #         - Created a frontend design for a product.
+
+  #     - job: "Product Designer"
+  #       company: "Google"
+  #       companyUrl: "https://example.com"
+  #       date: "Feb 2016 - Mar 2017"
+  #       content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
+
+  # Education
+  education:
+    enable: true
+    title: "Học vấn"
+    index: false
+    items:
+      - title: "Sinh Viên Công Nghệ Thông Tin"
+        school:
+          name: "Trường Đại học Công Nghệ TP. Hồ Chí Minh-Hutech"
+          url: "https://www.hutech.edu.vn/"
+        date: "2021 - Nay"
+        GPA: "3.13/4.0"
+        content: |-
+          Hoạt động ngoại khóa 
+            - Hội thảo "Quy trình phát triển phần mềm Agile & Scrum (2023)".
+            - Hội thảo “Kết nối doanh nghiệp với sinh viên - nghề IT cất cánh cùng thời đại công nghệ số (2021)”
+      # - title: "Bachelor of Science in Computer Science"
+      #   school:
+      #     name: "Massachusetts Institute of Technology"
+      #     url: "https://example.org"
+      #   date: "2009 - 2013"
+      #   GPA: "3.9 out of 5.0"
+      #   content: |-
+      #     I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
+      #     - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
+      #     - Face mask detection using a single convolutional neural network.
+
+      #     Extracurricular Activities
+      #       - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      #       - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+      #   featuredLink:
+      #     enable: true
+      #     name: "My academic record"
+      #     url: "https://example.com"
+      # - title: "High School"
+      #   school:
+      #     name: "Thomas Jefferson High School for Science and Technology."
+      #     url: "https://example.org"
+      #   GPA: "4.2 out of 5.0"
+      #   featuredLink:
+      #     enable: true
+      #     url: "https://example.com"
+
+  # Achievements
+  achievements:
+    enable: true
+    title: "Chứng chỉ"
+    items:
+      - title: Networking Basics
+        content: Khóa học "Networking Basics" cung cấp kiến thức cơ bản về mạng máy tính, từ cấu trúc mạng, giao thức truyền tải dữ liệu, đến các mô hình mạng phổ biến. Người học sẽ được tìm hiểu về các thành phần chính của mạng như router, switch, và các phương thức giao tiếp giữa các thiết bị.
+        url: https://www.netacad.com/courses/networking-basics?courseLang=en-US
+        image: /images/chungchi1.png
+      - title: JavaScript Essentials 1
+        content: Khóa học "JavaScript Essentials 1" cung cấp các kiến thức cơ bản về JavaScript, một ngôn ngữ lập trình phổ biến dùng để phát triển các ứng dụng web. Người học sẽ được làm quen với các khái niệm cơ bản như biến, kiểu dữ liệu, toán tử, cấu trúc điều kiện, và cách viết các hàm.
+        url: https://www.netacad.com/courses/javascript-essentials-1?courseLang=en-US
+        image: /images/chungchi2.png
+      - title: JavaScript Essentials 2
+        content: Khóa học "JavaScript Essentials 2" tiếp tục nâng cao kiến thức về JavaScript, giúp người học hiểu rõ hơn về các khái niệm và kỹ thuật lập trình nâng cao. Trong khóa học này, bạn sẽ học cách làm việc với các đối tượng, mảng, và các phương thức xử lý dữ liệu trong JavaScript.
+        url: https://www.netacad.com/courses/javascript-essentials-2?courseLang=en-US
+        image: /images/chungchi3.png
+
+  # projects
+  projects:
+    enable: true
+    title: "Dự án"
+    items:
+      - title: Profile
+        content: Trang Profile trên website là nơi có thể quản lý và theo dõi tất cả thông tin quan trọng về bản thân cũng như các hoạt động đã thực hiện trên website.
+        image: /images/projects/profile.png
+        featured:
+          name: Demo Profile
+          link: https://hugo-profile.netlify.app
+        badges:
+          - "Hugo"
+          - "Bootstrap"
+          - "Javascript"
+        links:
+          - icon: fa fa-envelope
+            mailto: trantanthanh.2k3it@gmail.com?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+          - icon: fab fa-github
+            url: https://github.com/ThanhTran2k3
+          - icon: fab fa-facebook
+            url: https://www.facebook.com/tranthanh31321/
+
+      - title: Website nghe nhạc 
+        content: Website nghe nhạc được thực hiện nhằm xây dựng một nền tảng trực tuyến giúp người dùng trải nghiệm âm nhạc một cách dễ dàng.
+        image: /images/projects/webnghenhac.png
+        featured:
+          name: Demo Website
+          link: https://github.com/ThanhTran2k3/DA_Web
+        badges:
+          - "C#"
+          - "Bootstrap"
+          - "Javascript"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/ThanhTran2k3/DA_Web
+
+      - title: Website thuê phòng trọ 
+        content: Website thuê phòng trọ là trang web giúp bạn dễ dàng tìm kiếm và thuê phòng trọ phù hợp với nhu cầu của mình. Chúng tôi cung cấp thông tin chi tiết về các phòng trọ cho thuê, bao gồm hình ảnh, vị trí, giá cả và các tiện nghi đi kèm.
+        image: /images/projects/webthuetro.png
+        featured:
+          name: Demo Website
+          link: https://github.com/ThanhTran2k3/WebThuePhongTro
+        badges:
+          - "Java"
+          - "Bootstrap"
+          - "Javascript"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/ThanhTran2k3/WebThuePhongTro
+
+  #Contact
+  contact:
+    enable: true
+    title: "Liện hệ"
+    content: Hộp thư đến của tôi luôn sẵn sàng. Dù bạn có câu hỏi hay chỉ muốn trò chuyện, tôi sẽ luôn cố gắng trả lời bạn một cách nhanh chóng nhất!
+    btnName: Gửi mail cho tôi
+    btnLink: mailto:trantanthanh.2k3it@gmail.com
+    # formspree:
+    #   enable: true # `contact.email` value will be ignored
+    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   emailCaption: "Enter your email address"
+    #   messageCaption: "Enter your message here"
+    #   messageRows: 5
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Bài viết gần đây
+      enable: true
+      disableFeaturedImage: false
+    socialNetworks:
+      github: https://github.com/ThanhTran2k3
+      linkedin: https://www.linkedin.com/in/thanh-tr%E1%BA%A7n-7a0bb4343/
+      instagram: https://www.instagram.com/thanhtran.2k3/
+      facebook: https://www.facebook.com/tranthanh31321/
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages like blog and post
+  singlePages:
+    socialShare: true
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+    tags:
+      openInNewTab: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Mục lục"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Profile</title>
+    <link>http://localhost:1313/blogs/</link>
+    <description>Recent content in Blogs on Profile</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Sun, 19 Nov 2023 12:00:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lịch Sử phát triển ngôn ngữ lập trình Java</title>
+      <link>http://localhost:1313/blogs/java_version/</link>
+      <pubDate>Sun, 19 Nov 2023 12:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/blogs/java_version/</guid>
+      <description>Java đã trải qua nhiều phiên bản và mỗi phiên bản mới đều mang đến những cải tiến đột phá, thay đổi cách lập trình viên phát triển ứng dụng và tối ưu hiệu suất. Dưới đây là các phiên bản đột phá trong lịch sử Java, mỗi phiên bản đều có những tính năng mang tính cách mạng, thay đổi hướng phát triển của ngôn ngữ này.</description>
+    </item>
+    <item>
+      <title>Ngôn ngữ lập trình Java</title>
+      <link>http://localhost:1313/blogs/java-introduction-/</link>
+      <pubDate>Wed, 15 Nov 2023 12:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/blogs/java-introduction-/</guid>
+      <description>Java là một ngôn ngữ lập trình bậc cao, hướng đối tượng, được thiết kế để giúp các lập trình viên phát triển các ứng dụng phần mềm mạnh mẽ và bảo mật cao. Java là một ngôn ngữ đa nền tảng có nghĩa là ứng dụng Java có thể chạy trên nhiều hệ điều hành khác nhau mà không cần phải biên dịch lại. Java được phát triển bởi Sun Microsystems, do James Gosling sáng lập, và lần đầu tiên được công bố vào năm 1995.</description>
+    </item>
+    <item>
+      <title>Stream API và Lambda Expressions trong Java 8</title>
+      <link>http://localhost:1313/blogs/java_9/</link>
+      <pubDate>Thu, 23 Feb 2023 12:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/blogs/java_9/</guid>
+      <description>Java đã có một chặng đường dài kể từ khi ra đời, và phiên bản Java 8 đánh dấu một bước ngoặt lớn với việc giới thiệu Stream API và Lambda Expressions. Những tính năng này đã thay đổi cách chúng ta viết mã Java, đặc biệt là trong việc xử lý dữ liệu và tối ưu hóa các tác vụ phức tạp. Trong bài viết này, chúng ta sẽ cùng tìm hiểu chi tiết về Stream API và Lambda Expressions, những tính năng đột phá trong Java 8, và cách chúng giúp đơn giản hóa mã nguồn, tăng tính hiệu quả và dễ bảo trì.</description>
+    </item>
+    <item>
+      <title>Bộ nhớ Stack và Heap trong Java</title>
+      <link>http://localhost:1313/blogs/java_stack/</link>
+      <pubDate>Tue, 06 Sep 2022 12:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/blogs/java_stack/</guid>
+      <description>Trong Java, bộ nhớ được phân chia thành hai khu vực chính &lt;strong&gt;Stack&lt;/strong&gt; và &lt;strong&gt;Heap&lt;/strong&gt;. Mỗi khu vực có vai trò và cách thức quản lý bộ nhớ khác nhau, ảnh hưởng trực tiếp đến hiệu suất và cách thức hoạt động của ứng dụng Java. Hiểu rõ cách thức hoạt động của hai khu vực bộ nhớ này là điều quan trọng giúp bạn tối ưu hóa mã nguồn và tránh các lỗi phổ biến trong lập trình Java. Dưới đây là mô tả chi tiết về hai loại bộ nhớ này.</description>
+    </item>
+    <item>
+      <title>Java Collections</title>
+      <link>http://localhost:1313/blogs/java_collection/</link>
+      <pubDate>Tue, 26 Oct 2021 12:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/blogs/java_collection/</guid>
+      <description>Java Collections Framework là một phần quan trọng trong lập trình Java, cung cấp các cấu trúc dữ liệu mạnh mẽ và các phương thức để thao tác với chúng. Việc hiểu rõ về các Collections trong Java sẽ giúp bạn viết mã hiệu quả và dễ bảo trì hơn. Trong bài viết này, chúng ta sẽ khám phá chi tiết về Java Collections, bao gồm các loại Collection phổ biến và các thao tác cơ bản mà bạn có thể thực hiện với chúng.</description>
+    </item>
+    <item>
+      <title>Java Exception Handling</title>
+      <link>http://localhost:1313/blogs/java_exception/</link>
+      <pubDate>Wed, 05 Aug 2020 12:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/blogs/java_exception/</guid>
+      <description>Trong lập trình, việc xử lý lỗi là một phần quan trọng để đảm bảo ứng dụng hoạt động một cách ổn định và đáng tin cậy. Java cung cấp một cơ chế mạnh mẽ để xử lý lỗi thông qua cơ chế &lt;strong&gt;Exception Handling&lt;/strong&gt;. Trong bài viết này, chúng ta sẽ tìm hiểu về Exception Handling trong Java, các loại ngoại lệ (exceptions), cách sử dụng các cấu trúc điều khiển để xử lý ngoại lệ, và một số &lt;strong&gt;best practices&lt;/strong&gt; khi làm việc với exceptions.</description>
+    </item>
+    <item>
+      <title>JVM, JDK, JRE trong Java là gì?</title>
+      <link>http://localhost:1313/blogs/jvm_jdk_jre/</link>
+      <pubDate>Fri, 04 Oct 2019 12:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/blogs/jvm_jdk_jre/</guid>
+      <description>Trong Java, ba khái niệm cơ bản mà bạn thường nghe đến là JVM (Java Virtual Machine), JDK (Java Development Kit) và JRE (Java Runtime Environment). Mặc dù chúng có liên quan chặt chẽ với nhau, nhưng mỗi thành phần này có vai trò và chức năng riêng biệt. Dưới đây là một cái nhìn chi tiết hơn về từng thành phần và sự khác biệt giữa chúng.</description>
+    </item>
+    <item>
+      <title>Thread và Multithread trong Java</title>
+      <link>http://localhost:1313/blogs/java_thread/</link>
+      <pubDate>Mon, 12 Feb 2018 12:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/blogs/java_thread/</guid>
+      <description>Khi phát triển ứng dụng Java, đôi khi bạn cần thực hiện các tác vụ đồng thời hoặc xử lý nhiều công việc cùng lúc mà không làm gián đoạn tiến trình của nhau. Điều này có thể giúp cải thiện hiệu suất của ứng dụng, đặc biệt là khi làm việc với các tác vụ nặng hoặc đòi hỏi thời gian chờ đợi như I/O (đọc/ghi tệp, kết nối mạng, v.v.). Trong bài viết này, chúng ta sẽ tìm hiểu về Thread và Multithreading trong Java, cách sử dụng chúng và các kỹ thuật tối ưu hiệu suất khi làm việc với đa luồng.</description>
+    </item>
+    <item>
+      <title>Lập trình hướng đối tượng trong Java</title>
+      <link>http://localhost:1313/blogs/java_oop/</link>
+      <pubDate>Tue, 31 Oct 2017 12:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/blogs/java_oop/</guid>
+      <description>Lập trình hướng đối tượng (OOP) là một phương pháp lập trình mạnh mẽ và linh hoạt, cho phép lập trình viên tổ chức mã nguồn một cách có cấu trúc và dễ quản lý. OOP không chỉ giúp cải thiện khả năng tái sử dụng mã mà còn làm cho việc bảo trì và mở rộng ứng dụng trở nên dễ dàng hơn. Trong bối cảnh phát triển phần mềm hiện đại, OOP đã trở thành một tiêu chuẩn quan trọng, và Java là một trong những ngôn ngữ lập trình hàng đầu hỗ trợ các nguyên lý này.</description>
+    </item>
+  </channel>
+</rss>

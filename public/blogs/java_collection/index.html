@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/fav.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://localhost:1313/blogs/java_collection/">
+  <meta property="og:site_name" content="Profile">
+  <meta property="og:title" content="Java Collections">
+  <meta property="og:description" content="Java Collections Framework là một phần quan trọng trong lập trình Java, cung cấp các cấu trúc dữ liệu mạnh mẽ và các phương thức để thao tác với chúng. Việc hiểu rõ về các Collections trong Java sẽ giúp bạn viết mã hiệu quả và dễ bảo trì hơn. Trong bài viết này, chúng ta sẽ khám phá chi tiết về Java Collections, bao gồm các loại Collection phổ biến và các thao tác cơ bản mà bạn có thể thực hiện với chúng.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blogs">
+    <meta property="article:published_time" content="2021-10-26T12:00:00+07:00">
+    <meta property="article:modified_time" content="2021-10-26T12:00:00+07:00">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Java Collections">
+  <meta name="twitter:description" content="Java Collections Framework là một phần quan trọng trong lập trình Java, cung cấp các cấu trúc dữ liệu mạnh mẽ và các phương thức để thao tác với chúng. Việc hiểu rõ về các Collections trong Java sẽ giúp bạn viết mã hiệu quả và dễ bảo trì hơn. Trong bài viết này, chúng ta sẽ khám phá chi tiết về Java Collections, bao gồm các loại Collection phổ biến và các thao tác cơ bản mà bạn có thể thực hiện với chúng.">
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+Java Collections | Profile
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                <img src="/fav.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Profile
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#about" aria-label="about">
+                            Giới thiệu
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#education"
+                            aria-label="education">
+                            Học vấn
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#projects"
+                            aria-label="projects">
+                            Dự án
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#achievements"
+                            aria-label="achievements">
+                            Chứng chỉ
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#contact"
+                            aria-label="contact">
+                            Liện hệ
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/blogs" title="Bài viết">
+                            
+                            Bài viết
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Java Collections</h1>
+            <div class="text-center">
+              
+              Oct 26, 2021
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/images/post/java_collection.jpg" alt="Java Collections">
+          </div>
+          
+          <article class="page-content  p-2">
+          <h1 id="hiểu-rõ-về-java-collections-khám-phá-các-cấu-trúc-dữ-liệu-và-thao-tác">Hiểu Rõ Về Java Collections: Khám Phá Các Cấu Trúc Dữ Liệu và Thao Tác</h1>
+<p>Java Collections Framework là một phần quan trọng trong lập trình Java, cung cấp các cấu trúc dữ liệu mạnh mẽ và các phương thức để thao tác với chúng. Việc hiểu rõ về các Collections trong Java sẽ giúp bạn viết mã hiệu quả và dễ bảo trì hơn. Trong bài viết này, chúng ta sẽ khám phá chi tiết về Java Collections, bao gồm các loại Collection phổ biến và các thao tác cơ bản mà bạn có thể thực hiện với chúng.</p>
+<h2 id="1-java-collections-framework-là-gì">1. Java Collections Framework là gì?</h2>
+<p>Java Collections Framework là một bộ sưu tập các lớp và giao diện cung cấp các cấu trúc dữ liệu như danh sách, tập hợp, bản đồ và các thao tác như tìm kiếm, sắp xếp và thao tác dữ liệu. Các cấu trúc dữ liệu này giúp bạn lưu trữ, truy cập và thao tác với dữ liệu một cách dễ dàng và hiệu quả.</p>
+<h3 id="các-thành-phần-chính-của-java-collections-framework">Các thành phần chính của Java Collections Framework:</h3>
+<ul>
+<li><strong>Collection Interface</strong>: Đây là giao diện cơ sở cho tất cả các Collection trong Java.</li>
+<li><strong>List, Set, Queue</strong>: Các giao diện con của Collection, đại diện cho các loại Collection khác nhau.</li>
+<li><strong>Map Interface</strong>: Một giao diện độc lập không kế thừa từ Collection, dùng để lưu trữ các cặp key-value.</li>
+<li><strong>Implementations</strong>: Các lớp triển khai như ArrayList, HashSet, TreeMap cung cấp các cách thức cụ thể để lưu trữ dữ liệu.</li>
+<li><strong>Algorithms</strong>: Các thuật toán như tìm kiếm, sắp xếp, và thao tác dữ liệu trong các Collection.</li>
+</ul>
+<h2 id="2-các-loại-collection-chính-trong-java">2. Các Loại Collection Chính Trong Java</h2>
+<h3 id="21-list-interface">2.1 List Interface</h3>
+<p><code>List</code> là một giao diện trong Java Collections đại diện cho một danh sách có thể chứa các phần tử trùng lặp và các phần tử theo thứ tự. Các lớp triển khai của List bao gồm:</p>
+<ul>
+<li><strong>ArrayList</strong>: Lớp phổ biến nhất, sử dụng một mảng động để lưu trữ các phần tử.</li>
+<li><strong>LinkedList</strong>: Sử dụng danh sách liên kết để lưu trữ phần tử, hiệu quả hơn khi thực hiện các thao tác chèn và xóa.</li>
+<li><strong>Vector</strong>: Tương tự như ArrayList, nhưng được đồng bộ hóa.</li>
+</ul>
+<h4 id="ví-dụ-sử-dụng-arraylist">Ví dụ sử dụng ArrayList:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> fruits <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>fruits.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Apple&#34;</span>);
+</span></span><span style="display:flex;"><span>fruits.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Banana&#34;</span>);
+</span></span><span style="display:flex;"><span>fruits.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Orange&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (String fruit : fruits) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(fruit);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="22-set-interface">2.2 Set Interface</h3>
+<p><code>Set</code> là một giao diện đại diện cho một tập hợp không chứa các phần tử trùng lặp. Các lớp triển khai của Set bao gồm:</p>
+<ul>
+<li><strong>HashSet</strong>: Không giữ thứ tự các phần tử, nhưng tìm kiếm và thêm phần tử rất nhanh.</li>
+<li><strong>LinkedHashSet</strong>: Giữ thứ tự chèn các phần tử.</li>
+<li><strong>TreeSet</strong>: Sắp xếp các phần tử theo thứ tự tự nhiên hoặc theo một Comparator.</li>
+</ul>
+<h4 id="ví-dụ-sử-dụng-hashset">Ví dụ sử dụng HashSet:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> colors <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>colors.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Red&#34;</span>);
+</span></span><span style="display:flex;"><span>colors.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Green&#34;</span>);
+</span></span><span style="display:flex;"><span>colors.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Blue&#34;</span>);
+</span></span><span style="display:flex;"><span>colors.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Red&#34;</span>);  <span style="color:#75715e">// Duplicated element, will not be added</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (String color : colors) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(color);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="23-queue-interface">2.3 Queue Interface</h3>
+<p><code>Queue</code> là một giao diện đại diện cho một hàng đợi, thường được sử dụng trong các ứng dụng cần xử lý theo kiểu FIFO (First In, First Out). Các lớp triển khai của Queue bao gồm:</p>
+<ul>
+<li><strong>LinkedList</strong>: Cũng triển khai Queue, hỗ trợ các thao tác hàng đợi hiệu quả.</li>
+<li><strong>PriorityQueue</strong>: Xử lý các phần tử theo độ ưu tiên thay vì theo thứ tự chèn.</li>
+</ul>
+<h4 id="ví-dụ-sử-dụng-priorityqueue">Ví dụ sử dụng PriorityQueue:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Queue<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> queue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PriorityQueue<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>queue.<span style="color:#a6e22e">offer</span>(10);
+</span></span><span style="display:flex;"><span>queue.<span style="color:#a6e22e">offer</span>(20);
+</span></span><span style="display:flex;"><span>queue.<span style="color:#a6e22e">offer</span>(5);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>queue.<span style="color:#a6e22e">isEmpty</span>()) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(queue.<span style="color:#a6e22e">poll</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="24-map-interface">2.4 Map Interface</h3>
+<p><code>Map</code> là một giao diện đại diện cho một cấu trúc dữ liệu lưu trữ các cặp key-value. Các lớp triển khai của Map bao gồm:</p>
+<ul>
+<li><strong>HashMap</strong>: Không đảm bảo thứ tự của các phần tử, rất nhanh trong việc truy xuất và thêm phần tử.</li>
+<li><strong>TreeMap</strong>: Sắp xếp các phần tử theo thứ tự tự nhiên của keys hoặc theo một Comparator.</li>
+<li><strong>LinkedHashMap</strong>: Duy trì thứ tự của các phần tử dựa trên thứ tự chèn.</li>
+</ul>
+<h4 id="ví-dụ-sử-dụng-hashmap">Ví dụ sử dụng HashMap:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, Integer<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;Apple&#34;</span>, 1);
+</span></span><span style="display:flex;"><span>map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;Banana&#34;</span>, 2);
+</span></span><span style="display:flex;"><span>map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;Orange&#34;</span>, 3);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Map.<span style="color:#a6e22e">Entry</span><span style="color:#f92672">&lt;</span>String, Integer<span style="color:#f92672">&gt;</span> entry : map.<span style="color:#a6e22e">entrySet</span>()) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(entry.<span style="color:#a6e22e">getKey</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> entry.<span style="color:#a6e22e">getValue</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="3-các-phương-thức-thao-tác-với-collection">3. Các Phương Thức Thao Tác Với Collection</h2>
+<p>Java Collections Framework cung cấp nhiều phương thức hữu ích để thao tác với các Collection. Dưới đây là một số phương thức phổ biến:</p>
+<h3 id="31-thêm-phần-tử">3.1 Thêm phần tử</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Apple&#34;</span>);
+</span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;Banana&#34;</span>);
+</span></span></code></pre></div><h3 id="32-kiểm-tra-phần-tử-có-tồn-tại-không">3.2 Kiểm tra phần tử có tồn tại không</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> contains <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#34;Apple&#34;</span>); <span style="color:#75715e">// Returns true</span>
+</span></span></code></pre></div><h3 id="33-loại-bỏ-phần-tử">3.3 Loại bỏ phần tử</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>list.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;Banana&#34;</span>);
+</span></span></code></pre></div><h3 id="34-lọc-phần-tử-với-stream-api">3.4 Lọc phần tử (với Stream API)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> numbers <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(1, 2, 3, 4, 5, 6);
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> evenNumbers <span style="color:#f92672">=</span> numbers.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                                   .<span style="color:#a6e22e">filter</span>(n <span style="color:#f92672">-&gt;</span> n <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)
+</span></span><span style="display:flex;"><span>                                   .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toList</span>());
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(evenNumbers); <span style="color:#75715e">// Output: [2, 4, 6]</span>
+</span></span></code></pre></div><h3 id="35-sắp-xếp-collection">3.5 Sắp xếp Collection</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> numbers <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(3, 1, 4, 1, 5, 9);
+</span></span><span style="display:flex;"><span>Collections.<span style="color:#a6e22e">sort</span>(numbers);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(numbers); <span style="color:#75715e">// Output: [1, 1, 3, 4, 5, 9]</span>
+</span></span></code></pre></div><h2 id="4-các-thực-hành-tốt-khi-làm-việc-với-collections">4. Các Thực Hành Tốt Khi Làm Việc Với Collections</h2>
+<ul>
+<li><strong>Chọn loại Collection phù hợp</strong>: Tùy thuộc vào yêu cầu về hiệu suất và loại dữ liệu, bạn nên chọn giữa các loại Collection như ArrayList, HashSet, TreeMap, v.v.</li>
+<li><strong>Tránh sử dụng null trong Collection</strong>: Một số Collection như HashSet và HashMap cho phép giá trị null, nhưng việc sử dụng null có thể gây lỗi hoặc khiến mã khó bảo trì.</li>
+<li><strong>Sử dụng các thuật toán sẵn có</strong>: Java Collections Framework cung cấp nhiều thuật toán như tìm kiếm, sắp xếp, và lặp qua các phần tử, giúp mã nguồn trở nên ngắn gọn và dễ đọc hơn.</li>
+<li><strong>Thận trọng với tính đồng bộ hóa</strong>: Các Collection như Vector và Hashtable là đồng bộ, nhưng bạn nên cân nhắc khi sử dụng chúng trong môi trường đa luồng vì hiệu suất thấp.</li>
+</ul>
+<h2 id="5-kết-luận">5. Kết luận</h2>
+<p>Java Collections Framework cung cấp một bộ công cụ mạnh mẽ giúp bạn xử lý dữ liệu một cách linh hoạt và hiệu quả. Bằng cách hiểu và áp dụng các loại Collection như List, Set, Queue, và Map, bạn có thể tối ưu hóa mã nguồn và cải thiện hiệu suất của ứng dụng. Sử dụng đúng cách các cấu trúc dữ liệu này giúp mã của bạn dễ bảo trì và mở rộng hơn.</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                
+                  Mục lục 
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-java-collections-framework-là-gì">1. Java Collections Framework là gì?</a>
+      <ul>
+        <li><a href="#các-thành-phần-chính-của-java-collections-framework">Các thành phần chính của Java Collections Framework:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-các-loại-collection-chính-trong-java">2. Các Loại Collection Chính Trong Java</a>
+      <ul>
+        <li><a href="#21-list-interface">2.1 List Interface</a></li>
+        <li><a href="#22-set-interface">2.2 Set Interface</a></li>
+        <li><a href="#23-queue-interface">2.3 Queue Interface</a></li>
+        <li><a href="#24-map-interface">2.4 Map Interface</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-các-phương-thức-thao-tác-với-collection">3. Các Phương Thức Thao Tác Với Collection</a>
+      <ul>
+        <li><a href="#31-thêm-phần-tử">3.1 Thêm phần tử</a></li>
+        <li><a href="#32-kiểm-tra-phần-tử-có-tồn-tại-không">3.2 Kiểm tra phần tử có tồn tại không</a></li>
+        <li><a href="#33-loại-bỏ-phần-tử">3.3 Loại bỏ phần tử</a></li>
+        <li><a href="#34-lọc-phần-tử-với-stream-api">3.4 Lọc phần tử (với Stream API)</a></li>
+        <li><a href="#35-sắp-xếp-collection">3.5 Sắp xếp Collection</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-các-thực-hành-tốt-khi-làm-việc-với-collections">4. Các Thực Hành Tốt Khi Làm Việc Với Collections</a></li>
+    <li><a href="#5-kết-luận">5. Kết luận</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://www.linkedin.com/in/thanh-tr%E1%BA%A7n-7a0bb4343/">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://github.com/ThanhTran2k3">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://www.facebook.com/tranthanh31321/">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="mailto:trantanthanh.2k3it@gmail.com?subject=Check this out&body=Hi Thanh, I found this interesting content!">
+                    <i class="fa fa-envelope"></i>
+                </a>                
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+<script src="/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    
+ 
+ 
+<div class="container py-3" id="recent-posts">
+    
+    
+    <div class="h3 text-center text-secondary py-3">
+        Bài viết gần đây
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/blogs/java_version/">
+                        <img src="/images/post/java_version.jpg" class="card-img-top" alt="Lịch Sử phát triển ngôn ngữ lập trình Java">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/java_version/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Lịch Sử phát triển ngôn ngữ lập trình Java">Lịch Sử phát triển ngôn …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Java đã trải qua nhiều phiên bản và mỗi phiên bản mới đều mang đến những cải tiến đột phá, thay đổi cách lập trình viên phát triển ứng dụng và tối ưu hiệu suất. Dưới đây là các phiên bản đột phá trong lịch sử Java, mỗi phiên bản đều có những tính năng mang tính cách mạng, thay đổi hướng phát triển …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Nov 19, 2023</span>
+                    <a href="/blogs/java_version/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/blogs/java-introduction-/">
+                        <img src="/images/post/java_about.jpg" class="card-img-top" alt="Ngôn ngữ lập trình Java">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/java-introduction-/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Ngôn ngữ lập trình Java">Ngôn ngữ lập trình Java</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Java là một ngôn ngữ lập trình bậc cao, hướng đối tượng, được thiết kế để giúp các lập trình viên phát triển các ứng dụng phần mềm mạnh mẽ và bảo mật cao. Java là một ngôn ngữ đa nền tảng có nghĩa là ứng dụng Java có thể chạy trên nhiều hệ điều hành khác nhau mà không cần phải biên dịch lại. Java …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Nov 15, 2023</span>
+                    <a href="/blogs/java-introduction-/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/blogs/java_8/">
+                        <img src="/images/post/java_8.jpg" class="card-img-top" alt="Stream API và Lambda Expressions trong Java 8">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/java_8/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Stream API và Lambda Expressions trong Java 8">Stream API và Lambda …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Java đã có một chặng đường dài kể từ khi ra đời, và phiên bản Java 8 đánh dấu một bước ngoặt lớn với việc giới thiệu Stream API và Lambda Expressions. Những tính năng này đã thay đổi cách chúng ta viết mã Java, đặc biệt là trong việc xử lý dữ liệu và tối ưu hóa các tác vụ phức tạp. Trong bài viết …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Feb 23, 2023</span>
+                    <a href="/blogs/java_8/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/ThanhTran2k3" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path id="footer-socialNetworks-github-svg-path"
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://www.linkedin.com/in/thanh-tr%E1%BA%A7n-7a0bb4343/" aria-label="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
+                viewBox="0 0 512 512">
+                <rect width="512" height="512" fill="#0077b5" rx="15%" />
+                <circle cx="142" cy="138" r="37" />
+                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
+                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
+            </svg>
+        </a>
+    </span>
+    
+
+    
+
+    
+    <a href="https://www.instagram.com/thanhtran.2k3/" aria-label="instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+            <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899"
+                gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fd5" />
+                <stop offset=".328" stop-color="#ff543f" />
+                <stop offset=".348" stop-color="#fc5245" />
+                <stop offset=".504" stop-color="#e64771" />
+                <stop offset=".643" stop-color="#d53e91" />
+                <stop offset=".761" stop-color="#cc39a4" />
+                <stop offset=".841" stop-color="#c837ab" />
+            </radialGradient>
+            <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+            <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813"
+                gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#4168c9" />
+                <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+            </radialGradient>
+            <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+            <path fill="#fff"
+                d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+            <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+            <path fill="#fff"
+                d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+        </svg>
+    </a>
+    
+
+    
+    <a href="https://www.facebook.com/tranthanh31321/" aria-label="facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+            <path fill="#3F51B5"
+                d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z" />
+            <path fill="#FFF"
+                d="M34.368,25H31v13h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287C31.104,17,31,17.6,31,18.723V21h4L34.368,25z" />
+        </svg>
+    </a>
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+                
+            
+            &copy; 2024  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>
