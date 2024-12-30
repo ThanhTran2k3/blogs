@@ -1,4 +1,4 @@
-baseURL: "http://example.org/"
+baseURL: "https://trantanthanhblogs.netlify.app/"
 languageCode: "vi"
 title: "Profile"
 theme: hugo-profile
