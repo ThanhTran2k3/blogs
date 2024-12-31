@@ -301,7 +301,7 @@ params:
         image: /images/projects/profile.png
         featured:
           name: Demo Profile
-          link: https://hugo-profile.netlify.app
+          link: https://github.com/ThanhTran2k3/blogs
         badges:
           - "Hugo"
           - "Bootstrap"
